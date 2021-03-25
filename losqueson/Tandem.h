@@ -50,7 +50,7 @@ public :
    Double_t        Time_CFD_raw_C;
    Double_t        Time_CFD_smooth_C;
 
-//   Double_t        ToF_true = Time_C - Time_B;
+   Double_t        ToF_true = Time_C - Time_B;
 
  // List of branches
    TBranch        *b_Time_A;   //!
@@ -65,7 +65,7 @@ public :
    TBranch        *b_Time_CFD_raw_C;   //!
    TBranch        *b_Time_CFD_smooth_C;   //!
 
-//   TBranch        *b_ToF_true;   //!
+   TBranch        *b_ToF_true;   //!
 
    Tandem(TTree * /*tree*/ =0) { }
    virtual ~Tandem() { }
@@ -116,7 +116,7 @@ void Tandem::Init(TTree *tree)
    fChain->SetBranchAddress("Time_CFD_raw_C", &Time_CFD_raw_C, &b_Time_CFD_raw_C);
    fChain->SetBranchAddress("Time_CFD_smooth_C", &Time_CFD_smooth_C, &b_Time_CFD_smooth_C);
 
-//   fChain->SetBranchAddress("ToF_true", &ToF_true, &b_ToF_true);
+   fChain->SetBranchAddress("ToF_true", &ToF_true, &b_ToF_true);
 
 }
 

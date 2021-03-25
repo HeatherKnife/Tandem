@@ -74,7 +74,13 @@ Bool_t Tandem::Process(Long64_t entry)
 
    GetEntry(entry);
 
-   HistToF_True->Fill(ToF_true);
+   double ToF_true = Time_C - Time_B;
+   HistToF_True->Fill(Time_CFD_smooth_B);
+
+   cout << "Time A " << Time_A << endl;
+   cout << "Time B " << Time_B << endl;
+   cout << "Time C " << Time_C << endl;
+   cout << " " << endl;
 
    cout << "Time_CFD_smooth A " << Time_CFD_smooth_A << endl;
    cout << "Time_CFD_smooth B " << Time_CFD_smooth_B << endl;
