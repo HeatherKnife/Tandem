@@ -50,7 +50,7 @@ public :
    Double_t        Time_CFD_raw_C;
    Double_t        Time_CFD_smooth_C;
 
-   Double_t        ToF_true = Time_C - Time_B;
+   Double_t        ToF_true = Time_CFD_smooth_C - Time_CFD_smooth_B;
 
  // List of branches
    TBranch        *b_Time_A;   //!
