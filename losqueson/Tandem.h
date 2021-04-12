@@ -38,19 +38,19 @@ public :
    TTree          *fChain;   //!pointer to the analyzed TTree or TChain
 
    // Declaration of leaf types
-   Double_t        Time_A;
-   Double_t        Time_CFD_raw_A;
-   Double_t        Time_CFD_smooth_A;
+   float_t        Time_A;
+   float_t        Time_CFD_raw_A;
+   float_t        Time_CFD_smooth_A;
 
-   Double_t        Time_B;
-   Double_t        Time_CFD_raw_B;
-   Double_t        Time_CFD_smooth_B;
+   float_t        Time_B;
+   float_t        Time_CFD_raw_B;
+   float_t        Time_CFD_smooth_B;
 
-   Double_t        Time_C;
-   Double_t        Time_CFD_raw_C;
-   Double_t        Time_CFD_smooth_C;
+   float_t        Time_C;
+   float_t        Time_CFD_raw_C;
+   float_t        Time_CFD_smooth_C;
 
-   Double_t        ToF_true = Time_CFD_smooth_C - Time_CFD_smooth_B;
+   float_t        ToF_true;
 
  // List of branches
    TBranch        *b_Time_A;   //!
@@ -116,7 +116,7 @@ void Tandem::Init(TTree *tree)
    fChain->SetBranchAddress("Time_CFD_raw_C", &Time_CFD_raw_C, &b_Time_CFD_raw_C);
    fChain->SetBranchAddress("Time_CFD_smooth_C", &Time_CFD_smooth_C, &b_Time_CFD_smooth_C);
 
-   fChain->SetBranchAddress("ToF_true", &ToF_true, &b_ToF_true);
+ //  fChain->SetBranchAddress("ToF_true", &ToF_true, &b_ToF_true);
 
 }
 

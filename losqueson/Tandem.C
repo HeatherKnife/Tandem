@@ -48,7 +48,7 @@ void Tandem::SlaveBegin(TTree * /*tree*/)
 
    TString option = GetOption();
 
-   HistToF_True = new TH1F("HistToF_True", "", 100, 1., 1.);
+   HistToF_True = new TH1F("HistToF_True", "", 300, 1., 1.);
 
 }
 
@@ -74,12 +74,10 @@ Bool_t Tandem::Process(Long64_t entry)
 
    GetEntry(entry);
 
+   ToF_true = Time_CFD_smooth_C - Time_CFD_smooth_B;
+
    HistToF_True->Fill(ToF_true);
 
-   cout << "Time_CFD_smooth A " << Time_CFD_smooth_A << endl;
-   cout << "Time_CFD_smooth B " << Time_CFD_smooth_B << endl;
-   cout << "Time_CFD_smooth C " << Time_CFD_smooth_C << endl;
-   cout << " " << endl;
 
    return kTRUE;
 }
